@@ -26,12 +26,12 @@ namespace HW3_4.Implementings
                 {
                     capacity = value;
                 }
-                T[] new_array = new T[capacity];
+                T[] new_ar = new T[capacity];
                 for (int i = 0; i < size; i++)
                 {
-                    new_array[i] = items[i];
+                    new_ar[i] = items[i];
                 }
-                items = new_array;
+                items = new_ar;
             }
         }
         
@@ -124,18 +124,18 @@ namespace HW3_4.Implementings
 
         public T[] Where(Func<T, bool> condition)
         {
-            T[] new_array = new T[size];
+            T[] new_ar = new T[size];
             int index = 0;
             for (int i = 0; i < size; i++)
             {
                 if (condition(items[i]))
                 {
-                    new_array[index] = items[i];
+                    new_ar[index] = items[i];
                     index++;
                 }
             }
-            Array.Resize(ref new_array, index);
-            return new_array;
+            Array.Resize(ref new_ar, index);
+            return new_ar;
         }
 
         public void Reverse()
