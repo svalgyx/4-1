@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Diagnostics.SymbolStore;
 using HW3_4.Implementings;
-
 namespace HW3_4
 {
     class Program
