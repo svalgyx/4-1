@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace HW3_4.Implementations
+namespace HW3_4.Implementings
 {
     public sealed class SingleArray<T>
         where T : IComparable<T>
