@@ -5,11 +5,11 @@ namespace HW3_4.Implementings
     public sealed class Single<T>
         where T : IComparable<T>
     {
-        private const int USUAL_CAPACITY = 11;
+        private const int usual_cap = 11;
         private T[] items;
         private int size;
 
-        public Single(int capacity=USUAL_CAPACITY)
+        public Single(int capacity=usual_cap)
         {
             items = new T[capacity];
             size = capacity;
@@ -17,11 +17,11 @@ namespace HW3_4.Implementings
 
         public T this[int index] { get => items[index]; set => items[index] = value; }
 
-        private void EnsureCapacity(int value)
+        private void EnsureCap(int value)
         {
             if (items.Len < value)
             {
-                int capacity = items.Len == 0 ? USUAL_CAPACITY : items.Len * 2 + 1;
+                int capacity = items.Len == 0 ? usual_cap : items.Len * 2 + 1;
                 if (capacity < value)
                 {
                     capacity = value;
@@ -39,7 +39,7 @@ namespace HW3_4.Implementings
         {
             if (size == items.Len)
             {
-                EnsureCapacity(size + 1);
+                EnsureCap(size + 1);
             }
             items[size++] = item;
         }
