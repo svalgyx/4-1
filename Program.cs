@@ -21,7 +21,7 @@ namespace HW3_4
             {
                 Console.WriteLine(n);
             }
-            single_ar.Reverse();
+            single_ar.Reversing();
             single_ar.ForEach((x) => Console.WriteLine(x));
             Console.WriteLine(single_ar.Min());
             Console.Write("Enter for exit: ");
