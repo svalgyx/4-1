@@ -2,14 +2,14 @@ using System.Collections;
 
 namespace HW3_4.Implementings
 {
-    public sealed class SingleArray<T>
+    public sealed class Single<T>
         where T : IComparable<T>
     {
         private const int DEFAULT_CAPACITY = 11;
         private T[] items;
         private int size;
 
-        public SingleArray(int capacity=DEFAULT_CAPACITY)
+        public Single(int capacity=DEFAULT_CAPACITY)
         {
             items = new T[capacity];
             size = capacity;
