@@ -138,9 +138,9 @@ namespace HW3_4.Implementings
             return new_ar;
         }
 
-        public void Reverse()
+        public void Reversing()
         {
-            Array.Reverse(items, 0, size);
+            Array.Reversing(items, 0, size);
         }
 
         public T Min()
