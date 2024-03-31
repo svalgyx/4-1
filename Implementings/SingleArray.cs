@@ -19,7 +19,7 @@ namespace HW3_4.Implementings
 
         private void EnsureCapacity(int value)
         {
-            if (items.Length < value)
+            if (items.Len < value)
             {
                 int capacity = items.Len == 0 ? USUAL_CAPACITY : items.Len * 2 + 1;
                 if (capacity < value)
@@ -43,8 +43,7 @@ namespace HW3_4.Implementings
             }
             items[size++] = item;
         }
-
-        public bool Remove(T item)
+        public bool Removing(T item)
         {
             int index = Array.IndexOf(items, item, 0, size);
             if (index >= 0)
@@ -62,7 +61,6 @@ namespace HW3_4.Implementings
             }
             return false;
         }
-
         public int Count => size;
 
         public int CountWhere(Func<T, bool> condition)
@@ -89,7 +87,6 @@ namespace HW3_4.Implementings
             }
             return false;
         }
-
         public bool All(Func<T, bool> condition)
         {
             for (int i = 0; i < size; i++)
@@ -134,7 +131,7 @@ namespace HW3_4.Implementings
                     index++;
                 }
             }
-            Array.Resize(ref new_ar, index);
+            Array.Resizing(ref new_ar, index);
             return new_ar;
         }
 
