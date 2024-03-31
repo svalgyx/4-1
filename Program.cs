@@ -14,7 +14,7 @@ namespace HW3_4
             {
                 single_array.Add(rnd.Next(1, 100));
             }
-            single_ary.ForEach((x) => Console.WriteLine(x));
+            single_ar.ForEach((x) => Console.WriteLine(x));
             Console.WriteLine(single_ar.All((x) => x >= 5));
             int[] array = single_ar.Where((x) => x >= 25);
             foreach (int n in array)
@@ -24,7 +24,7 @@ namespace HW3_4
             single_ar.Reverse();
             single_ar.ForEach((x) => Console.WriteLine(x));
             Console.WriteLine(single_ar.Min());
-            Console.Write("Press enter to exit: ");
+            Console.Write("Enter for exit: ");
             Console.ReadLine();
         }
     }
