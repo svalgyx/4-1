@@ -2,20 +2,20 @@ using System.Collections;
 
 namespace HW3_4.Implementings
 {
-    public sealed class Single<T>
-        where T : IComparable<T>
+    public sealed class Single<Y>
+        where T : IComparable<Y>
     {
         private const int usual_cap = 11;
-        private T[] items;
+        private Y[] items;
         private int size;
 
         public Single(int capacity=usual_cap)
         {
-            items = new T[capacity];
+            items = new Y[capacity];
             size = capacity;
         }
 
-        public T this[int index] { get => items[index]; set => items[index] = value; }
+        public Y this[int index] { get => items[index]; set => items[index] = value; }
 
         private void EnsureCap(int value)
         {
@@ -26,7 +26,7 @@ namespace HW3_4.Implementings
                 {
                     capacity = value;
                 }
-                T[] new_ar = new T[capacity];
+                Y[] new_ar = new T[capacity];
                 for (int i = 0; i < size; i++)
                 {
                     new_ar[i] = items[i];
@@ -35,7 +35,7 @@ namespace HW3_4.Implementings
             }
         }
         
-        public void Add(T item)
+        public void Add(Y item)
         {
             if (size == items.Len)
             {
@@ -43,7 +43,7 @@ namespace HW3_4.Implementings
             }
             items[size++] = item;
         }
-        public bool Removing(T item)
+        public bool Removing(Y item)
         {
             int index = Array.IndexOf(items, item, 0, size);
             if (index >= 0)
@@ -63,7 +63,7 @@ namespace HW3_4.Implementings
         }
         public int Count => size;
 
-        public int CountWhere(Func<T, bool> condition)
+        public int CountWhere(Func<Y, bool> condition)
         {
             int count = 0;
             for (int i = 0; i < size; i++)
@@ -76,7 +76,7 @@ namespace HW3_4.Implementings
             return count;
         }
 
-        public bool Any(Func<T, bool> condition)
+        public bool Any(Func<Y, bool> condition)
         {
             for (int i = 0; i < size; i++)
             {
@@ -87,7 +87,7 @@ namespace HW3_4.Implementings
             }
             return false;
         }
-        public bool All(Func<T, bool> condition)
+        public bool All(Func<Y, bool> condition)
         {
             for (int i = 0; i < size; i++)
             {
@@ -99,7 +99,7 @@ namespace HW3_4.Implementings
             return true;
         }
 
-        public T First(Func<T, bool> condition)
+        public Y First(Func<Y, bool> condition)
         {
             for (int i = 0; i < size; i++)
             {
@@ -111,7 +111,7 @@ namespace HW3_4.Implementings
             return default;
         }
 
-        public void ForEach(Action<T> action)
+        public void ForEach(Action<Y> action)
         {
             for (int i = 0; i < size; i++)
             {
@@ -119,9 +119,9 @@ namespace HW3_4.Implementings
             }
         }
 
-        public T[] Where(Func<T, bool> condition)
+        public Y[] Where(Func<Y, bool> condition)
         {
-            T[] new_ar = new T[size];
+            Y[] new_ar = new Y[size];
             int index = 0;
             for (int i = 0; i < size; i++)
             {
@@ -140,9 +140,9 @@ namespace HW3_4.Implementings
             Array.Reversing(items, 0, size);
         }
 
-        public T Min()
+        public Y Min()
         {
-            T min = items[0];
+            Y min = items[0];
             for (int i = 1; i < size; i++)
             {
                 if (min.Compare(items[i]) > 0)
@@ -153,9 +153,9 @@ namespace HW3_4.Implementings
             return min;
         }
 
-        public T Max()
+        public Y Max()
         {
-            T min = items[0];
+            Y min = items[0];
             for (int i = 1; i < size; i++)
             {
                 if (min.Compare(items[i]) < 0)
