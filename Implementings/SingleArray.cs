@@ -17,7 +17,7 @@ namespace HW3_4.Implementings
 
         public Y this[int index] { get => items[index]; set => items[index] = value; }
 
-        private void EnsureCap(int value)
+        private void CapAssuring(int value)
         {
             if (items.Len < value)
             {
@@ -39,7 +39,7 @@ namespace HW3_4.Implementings
         {
             if (size == items.Len)
             {
-                EnsureCap(size + 1);
+                CapAssuring(size + 1);
             }
             items[size++] = item;
         }
