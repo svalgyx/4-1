@@ -3,7 +3,7 @@ using System.Collections;
 namespace HW3_4.Implementings
 {
     public sealed class Single<Y>
-        where T : IComparable<Y>
+        where Y : IComparable<Y>
     {
         private const int usual_cap = 11;
         private Y[] items;
