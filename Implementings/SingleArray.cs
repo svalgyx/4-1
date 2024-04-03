@@ -145,7 +145,7 @@ namespace HW3_4.Implementings
             Y min = items[0];
             for (int i = 1; i < size; i++)
             {
-                if (min.Compare(items[i]) > 0)
+                if (min.CompareTo(items[i]) > 0)
                 {
                     min = items[i];
                 }
@@ -158,7 +158,7 @@ namespace HW3_4.Implementings
             Y min = items[0];
             for (int i = 1; i < size; i++)
             {
-                if (min.Compare(items[i]) < 0)
+                if (min.CompareTo(items[i]) < 0)
                 {
                     min = items[i];
                 }
